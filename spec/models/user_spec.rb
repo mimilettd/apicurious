@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-def stub_omniauth
-  OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+RSpec.describe User, type: :model do
+  it "creates or updates itself from an oauth hash" do
+    auth = {
     "provider"=>"github",
     "uid"=>1111111,
     "info"=>
@@ -34,7 +34,7 @@ def stub_omniauth
      "company"=>nil,
      "blog"=>"",
      "location"=>"Denver, CO",
-     "email"=>"noneofyourbusiness@gmail.com",
+     "email"=>"mimi@noneofyourbusiness.com",
      "hireable"=>nil,
      "bio"=>"Turing School of Software & Design\r\nBack-End Engineering Student",
      "public_repos"=>39,
@@ -43,16 +43,16 @@ def stub_omniauth
      "following"=>3,
      "created_at"=>"2017-03-20T01:29:45Z",
      "updated_at"=>"2017-10-10T01:40:00Z"}}
-  })
-end
+    }
 
-RSpec.feature "user logs in" do
-  scenario "using github oauth2" do
-    stub_omniauth
-    visit root_path
-    expect(page).to have_link("Sign in with Github")
-    click_link "Sign in with Github"
-    expect(page).to have_content("Mimi Le")
-    expect(page).to have_link("Logout")
+    User.create_with_omniauth(auth)
+    new_user = User.first
+
+    expect(new_user.provider).to eq("github")
+    expect(new_user.uid).to eq("1111111")
+    expect(new_user.email).to eq("mimi@noneofyourbusiness.com")
+    expect(new_user.name).to eq("Mimi Le")
+    expect(new_user.username).to eq("mimi")
+    expect(new_user.token).to eq("99426ae1")
   end
 end
