@@ -7,17 +7,17 @@ def stub_omniauth
   # omniauth will use when a user tries to authenticate:
   OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
     "provider"=>"github",
-    "uid"=>26531775,
+    "uid"=>1111111,
     "info"=>
     {"nickname"=>"mimilettd",
     "email"=>"mimilettd@gmail.com",
     "name"=>"Mimi Le",
     "urls"=>{"GitHub"=>"https://github.com/mimilettd", "Blog"=>""}},
-    "credentials"=>{"token"=>"0f2d4d8aa68e0cad348ace9cedfaf3ae99426ae1", "expires"=>false},
+    "credentials"=>{"token"=>"99426ae1", "expires"=>false},
     "extra"=>
     {"raw_info"=>
     {"login"=>"mimilettd",
-     "id"=>26531775,
+     "id"=>75,
      "avatar_url"=>"https://avatars1.githubusercontent.com/u/26531775?v=4",
      "gravatar_id"=>"",
      "url"=>"https://api.github.com/users/mimilettd",
@@ -37,7 +37,7 @@ def stub_omniauth
      "company"=>nil,
      "blog"=>"",
      "location"=>"Denver, CO",
-     "email"=>"mimilettd@gmail.com",
+     "email"=>"noneofyourbusiness@gmail.com",
      "hireable"=>nil,
      "bio"=>"Turing School of Software & Design\r\nBack-End Engineering Student",
      "public_repos"=>39,
