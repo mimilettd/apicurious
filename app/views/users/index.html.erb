@@ -1,0 +1,16 @@
+<div class="grid">
+  <div class="grid-area grid-area-1"><%= image_tag current_user.profile_picture, class: "profile" %>
+    <h1><%= current_user.name %></h1>
+    <h2><%= current_user.username %></h2>
+    <p class="bio"><%= current_user.bio %></p>
+    <hr>
+    <p class="city"><%= octicon "location", style: "vertical-align:middle" %> <%= current_user.location %></p>
+    <p class="email"><%= octicon "mail", :height => 16, style: "vertical-align:middle" %> <%= mail_to  current_user.email %></p>
+  </div>
+  <div class="grid-area grid-area-2">
+  </div>
+  <div class="grid-area grid-area-3">
+  </div>
+ <div class="grid-area grid-area-4">
+ </div>
+</div>

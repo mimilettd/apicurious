@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'octicons_helper'
 gem 'faraday'
 gem "figaro"
 # Use Capistrano for deployment
@@ -41,6 +41,9 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'rspec-rails'
+  gem 'vcr'
+  gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :development do
