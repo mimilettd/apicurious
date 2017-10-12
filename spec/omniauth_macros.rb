@@ -11,7 +11,7 @@ module OmniauthMacros
     "email"=>"janedoe@gmail.com",
     "name"=>"Mimi Le",
     "urls"=>{"GitHub"=>"https://github.com/mimilettd", "Blog"=>""}},
-    "credentials"=>{"token"=>"99426ae1", "expires"=>false},
+    "credentials"=>{"token"=>ENV['github_token'], "expires"=>false},
     "extra"=>
     {"raw_info"=>
     {"login"=>"mimi",

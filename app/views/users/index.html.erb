@@ -16,15 +16,17 @@
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Repositories <span class="badge badge-light"><%= @repositories.count %></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Stars</a>
+        <a class="nav-link" id="star-tab" data-toggle="tab" href="#star" role="tab" aria-controls="star">Stars <span class="badge badge-light"><%= @starred_repos.count %></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Followers</a>
+        <a class="nav-link" id="followers-tab" data-toggle="tab" href="#followers" role="tab" aria-controls="followers">Followers</a>
       </li>
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Following</a>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div>
+        </div>
       </div>
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <% @repositories.reverse.each do |repository| %>
@@ -38,6 +40,29 @@
           <% else %>
             <p class="repo-sub"><b><%= repository.language %></b> <%= distance_of_time_in_words(Time.now, repository.updated_at) %> ago</p>
           <% end %>
+          <hr>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="star" role="tabpanel" aria-labelledby="star-tab">
+        <% @starred_repos.each do |repository| %>
+          <p class="repository"><%= link_to repository.full_name, repository.url %></p>
+          <% if repository.language == "Ruby" %>
+            <p class="repo-sub"><i class="devicon-ruby-plain colored"></i> <b><%= repository.language %></b> Updated <%= distance_of_time_in_words(Time.now, repository.updated_at) %> ago</p>
+          <% elsif repository.language == "HTML" %>
+            <p class="repo-sub"><i class="devicon-html5-plain"></i> <b><%= repository.language %></b> Updated <%= distance_of_time_in_words(Time.now, repository.updated_at) %> ago</p>
+          <% elsif repository.language == "JavaScript" %>
+            <p class="repo-sub"><i class="devicon-javascript-plain colored"></i> <b><%= repository.language %></b> <%= distance_of_time_in_words(Time.now, repository.updated_at) %> ago</p>
+          <% else %>
+            <p class="repo-sub"><b><%= repository.language %></b> <%= distance_of_time_in_words(Time.now, repository.updated_at) %> ago</p>
+          <% end %>
+          <hr>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="followers" role="tabpanel" aria-labelledby="followers-tab">
+        <% @followers.each do |follower| %>
+          <p class="followers"><%= image_tag follower.profile_picture, :size => "50x50" %> <%= follower.name %> <%= follower.username %></p>
+          <p><%= follower.bio %> 
+          <%= octicon "location", style: "vertical-align:middle" %> <%= follower.location %></p>
           <hr>
         <% end %>
       </div>
