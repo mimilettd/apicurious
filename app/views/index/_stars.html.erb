@@ -1,0 +1,13 @@
+<% @starred_repos.each do |repository| %>
+  <p class="repository"><%= link_to repository.full_name, repository.url %></p>
+  <% if repository.language == "Ruby" %>
+    <p class="repo-sub"><i class="devicon-ruby-plain colored"></i> <b><%= repository.language %></b> Updated <%= distance_of_time_in_words(Time.now, repository.updated_at) %> ago</p>
+  <% elsif repository.language == "HTML" %>
+    <p class="repo-sub"><i class="devicon-html5-plain"></i> <b><%= repository.language %></b> Updated <%= distance_of_time_in_words(Time.now, repository.updated_at) %> ago</p>
+  <% elsif repository.language == "JavaScript" %>
+    <p class="repo-sub"><i class="devicon-javascript-plain colored"></i> <b><%= repository.language %></b> <%= distance_of_time_in_words(Time.now, repository.updated_at) %> ago</p>
+  <% else %>
+    <p class="repo-sub"><b><%= repository.language %></b> <%= distance_of_time_in_words(Time.now, repository.updated_at) %> ago</p>
+  <% end %>
+  <hr>
+<% end %>

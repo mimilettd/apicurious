@@ -1,0 +1,6 @@
+<% @following.each do |f| %>
+  <p class="followers"><%= image_tag f.profile_picture, :size => "50x50" %> <%= f.name %> <%= f.username %></p>
+  <p><%= f.bio %> 
+  <%= octicon "location", style: "vertical-align:middle" %> <%= f.location %></p>
+  <hr>
+<% end %>

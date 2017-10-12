@@ -7,19 +7,19 @@ class GithubService
   end
 
   def retrieve_repositories
-    response = @conn.get("https://api.github.com/users/#{current_user.username}/repos?access_token=#{current_user.token}")
+    response = @conn.get("/users/#{current_user.username}/repos?access_token=#{current_user.token}")
     raw_data = JSON.parse(response.body, symbolize_names: true)
     create_repo_objects(raw_data)
   end
 
   def retrieve_starred_repos
-    response = @conn.get("https://api.github.com/users/#{current_user.username}/starred?access_token=#{current_user.token}")
+    response = @conn.get("/users/#{current_user.username}/starred?access_token=#{current_user.token}")
     raw_data = JSON.parse(response.body, symbolize_names: true)
     create_repo_objects(raw_data)
   end
 
   def retrieve_other_users_partial_info(type)
-    response = @conn.get("https://api.github.com/users/#{current_user.username}/#{type}?access_token=#{current_user.token}")
+    response = @conn.get("/users/#{current_user.username}/#{type}?access_token=#{current_user.token}")
     raw_data = JSON.parse(response.body, symbolize_names: true)
     parse_other_users(raw_data)
   end
@@ -31,7 +31,7 @@ class GithubService
   end
 
   def retrieve_other_users_full_info(object)
-    response = @conn.get(object[:url])
+    response = @conn.get("/users/#{object[:login]}?access_token=#{current_user.token}")
     raw_data = JSON.parse(response.body, symbolize_names: true)
     create_other_user_objects(raw_data)
   end
