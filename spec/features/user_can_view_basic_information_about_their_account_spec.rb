@@ -1,14 +1,7 @@
-# As a user
-# When I visit "/"
-# And click on 'Login with Github'
-# And enter in my username and password
-# Then my path should be "/#{username}"
-# And I should see a profile pic, name, username, bio
-
 require 'rails_helper'
 
-feature "As a user" do
-  scenario "User can view basic information about their account" do
+feature "User" do
+  scenario "Can view basic information about their account" do
     visit '/'
 
     mock_auth_hash

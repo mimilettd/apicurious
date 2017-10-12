@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   def index
-    #response = Faraday.get(current_user.repo_url)
-
-    #@repos = JSON.parse(response.body, symbolize_names: true)
+    @repositories = GithubService.new(current_user).retrieve_repositories.sort_by &:updated_at
   end
 end

@@ -6,8 +6,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'fonts', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'global', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'images', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'sessions', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    
+    
     <style>
-      ul {
+      ul.primary-nav {
           list-style-type: none;
           margin: 0;
           padding: 0;
@@ -15,11 +24,11 @@
           background-color: #333;
       }
 
-      li {
+      li.primary-nav {
           float: left;
       }
 
-      li a {
+      li.primary-nav a {
           display: block;
           color: white;
           text-align: center;
@@ -27,7 +36,7 @@
           text-decoration: none;
       }
 
-      li a:hover {
+      li.primary-nav a:hover {
           background-color: #111;
       }
 
@@ -46,12 +55,12 @@
       <%= link_to "Sign in with Github", "/auth/github" %>
     <% end %>
 
-    <ul>
-      <li class="header"><%= image_tag 'logo/GitHub-Mark-Light-64px', style: 'height: 32px; width: 32px; vertical-align:middle;' %></li>
-      <li><a class="active" href="#home">Pull requests</a></li>
-      <li><a class="active" href="#news">Issues</a></li>
-      <li><a class="active" href="#contact">Marketplace</a></li>
-      <li><a class="active" href="#about">Explore</a></li>
+    <ul class="primary-nav">
+      <li class="primary-nav header"><%= image_tag 'logo/GitHub-Mark-Light-64px', style: 'height: 32px; width: 32px; vertical-align:middle;' %></li>
+      <li class="primary-nav"><a class="active" href="#home">Pull requests</a></li>
+      <li class="primary-nav"><a class="active" href="#news">Issues</a></li>
+      <li class="primary-nav"><a class="active" href="#contact">Marketplace</a></li>
+      <li class="primary-nav"><a class="active" href="#about">Explore</a></li>
     </ul>
     <%= yield %>
   </body>

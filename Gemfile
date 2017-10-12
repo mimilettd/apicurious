@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'octicons_helper'
 gem 'faraday'
 gem "figaro"
+gem 'bootstrap'
+gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
