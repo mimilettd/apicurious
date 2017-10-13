@@ -1,9 +1,12 @@
+div.nav {
+    background-color: #333;
+    height: 55px;
+}
 ul.primary-nav {
     list-style-type: none;
-    margin: 0;
+    margin-left: 30%;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
 }
 
 li.primary-nav {
@@ -26,3 +29,4 @@ li.primary-nav a:hover {
     float: left;
     margin: 10px;
 }
+
