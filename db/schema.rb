@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010031512) do
+ActiveRecord::Schema.define(version: 20171013020753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,19 +24,9 @@ ActiveRecord::Schema.define(version: 20171010031512) do
     t.string "username"
     t.string "token"
     t.string "profile_picture"
-    t.string "url"
-    t.string "followers_url"
-    t.string "following_url"
-    t.string "gists_url"
     t.string "bio"
     t.string "location"
     t.string "email"
-    t.string "repo_url"
-    t.string "starred_url"
-    t.string "followers"
-    t.string "following"
-    t.string "public_repos"
-    t.string "public_gists"
   end
 
 end

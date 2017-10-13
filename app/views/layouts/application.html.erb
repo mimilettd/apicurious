@@ -27,6 +27,9 @@
       <li class="primary-nav"><a class="active" href="#about">Explore</a></li>
       <% if current_user %>
         <li class="primary-nav"><a class="active" href="/signout" data-method="delete">Logout</a></li>
+        <li class="primary-nav">
+        <%= image_tag current_user.profile_picture, class: "profile-mini" %>
+        </li>
       <% else %>
          <li class="primary-nav"><a class="active" href="/auth/github">Login</a></li>
       <% end %>
