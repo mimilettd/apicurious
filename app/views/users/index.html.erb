@@ -32,6 +32,12 @@
         <div class="row"> 
           <%= render "index/overview" %>
         </div>
+        <div>
+        <p class="popular-repo-header">This week's contribution activity</p>
+          <% @recent_commits.each do |commit| %>
+            <p><%= octicon "git-commit" %> Created <%= pluralize(commit.weeks_commit, 'commit') %> to <%= link_to commit.repo_name, "http://github.com/#{current_user.username}/#{commit.repo_name}" %></p>
+          <% end %>
+        </div>
       </div>
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <%= render "index/repositories" %>
