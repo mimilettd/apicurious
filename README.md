@@ -19,9 +19,14 @@ $ gem install rails
 ```
 $ git clone https://github.com/mimilettd/apicurious.git
 ```
-3. Change directory to apicurious and start the web server:
+3. Change directory to apicurious and run the following commands:
 ```
  $ cd apicurious
+ $ bundle install
+ $ rake db:create db:migrate
+ ```
+ 4. Run the server:
+ ```
  $ rails server
  ```
- 4. Using a browser, go to `http://localhost:3000` and you'll be prompted to login using your Github account.
+ 5. Using a browser, go to `http://localhost:3000` and you'll be prompted to login using your Github account.
