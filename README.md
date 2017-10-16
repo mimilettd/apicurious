@@ -1,4 +1,4 @@
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/a8mEe"><a href="//imgur.com/a8mEe"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src="https://i.imgur.com/v8oJeEi.png">
 
 # apicurious
 
