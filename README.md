@@ -1,24 +1,34 @@
-# README
+<img src="https://i.imgur.com/v8oJeEi.png">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# apicurious
 
-Things you may want to cover:
+This project re-constructs a simplified version of Github's existing UI using their own API. Performance, UI, and overall user experience are emphasized. TDD was used to drive all layers of development.
 
-* Ruby version
+## Features
 
-* System dependencies
+  * User can authenticate using Omniauth
+  * User can view basic information about his/her account
+  * User can view a summary feed of his/her recent activity
+  * User can view a list of his/her repositories
+  
+## Getting Started
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Install Rails at the command prompt if you haven't yet:
+```
+$ gem install rails
+```
+2. At the command prompt, clone this repository:
+```
+$ git clone https://github.com/mimilettd/apicurious.git
+```
+3. Change directory to apicurious and run the following commands:
+```
+ $ cd apicurious
+ $ bundle install
+ $ rake db:create db:migrate
+ ```
+ 4. Run the server:
+ ```
+ $ rails server
+ ```
+ 5. Using a browser, go to `http://localhost:3000` and you'll be prompted to login using your Github account.
