@@ -6,7 +6,7 @@ feature "User" do
 
     mock_auth_hash
 
-    click_link "Sign in with Github"
+    click_link "Login"
 
     expect(page).to have_css("img[src=\"#{"https://avatars1.githubusercontent.com/u/26531775?v=4"}\"]")
     expect(page).to have_content("Mimi Le")

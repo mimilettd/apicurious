@@ -8,6 +8,13 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'database_cleaner'
 require 'omniauth_macros'
+require 'webmock/rspec'
+require 'vcr'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock
+end
 
 DatabaseCleaner.strategy = :truncation
 # Add additional requires below this line. Rails is not loaded until this point!
