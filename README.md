@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/v8oJeEi.png">
+<img src="http://g.recordit.co/yLVPjeJYvw.gif">
 
 # apicurious
 
